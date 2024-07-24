@@ -8,6 +8,6 @@ class MyPlaceController extends Controller
 {
     public function index()
     {
-        return "My page Welcome!";
+        return "My page Welcome!!!";
     }
 }
