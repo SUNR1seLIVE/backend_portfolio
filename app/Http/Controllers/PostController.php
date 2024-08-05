@@ -69,4 +69,26 @@ class PostController extends Controller
         $post->restore();
         dd("restored");
     }
+
+    public function firstOrCreate()
+    {
+        $anotherPost = [
+            'title' => 'some post',
+            'content' => 'some content',
+            'image' => 'someblalbla.jpg',
+            'likes' => 50000,
+            'is_published' => 1,
+        ];
+        $post = Post::firstOrCreate([
+            'title' => 'some title phpstorm',
+        ],[
+            'title' => 'some title phpstorm',
+            'content' => 'some content',
+            'image' => 'someblalbla.jpg',
+            'likes' => 50000,
+            'is_published' => 1,
+        ]);
+        dump($post->content);
+        dd('finished');
+    }
 }
